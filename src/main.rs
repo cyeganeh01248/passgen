@@ -17,8 +17,7 @@ struct Args {
 fn main() {
     let args = Args::parse();
 
-    let words = read_to_string("words_alpha.txt")
-        .unwrap()
+    let words = include_str!("./words_alpha.txt").to_string()
         .split("\r\n")
         .map(|n| n.to_string())
         .filter(|n| n.len() >= 4)
