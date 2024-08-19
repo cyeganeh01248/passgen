@@ -23,7 +23,6 @@ enum Subcommands {
 fn main() {
     let args = Args::parse();
     let sub = args.cmd.unwrap_or(Subcommands::Words);
-    println!("{args:?} {sub:?}");
     let passwords = match sub {
         Subcommands::Words => gen_word_passwords(args),
         Subcommands::Chars => gen_char_passwords(args),
